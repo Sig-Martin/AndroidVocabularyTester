@@ -10,18 +10,19 @@ public class Status {
 
     private int total;
 
-    private double progress;
-
     private int count;
 
     private double rate;
 
     public Status(int total) {
         this.total = total;
-        this.progress = 0d;
         this.correctNbr = 0;
         this.wrongNbr = 0;
-        this.
+        this.rate = 0d;
+    }
+
+    public double getProgress() {
+        return this.total == 0 ?  0d : (double) this.count / this.total;
     }
 
     public int getWrongNbr() {
@@ -55,5 +56,13 @@ public class Status {
 
     public void setCorrectNbr(int correctNbr) {
         this.correctNbr = correctNbr;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
