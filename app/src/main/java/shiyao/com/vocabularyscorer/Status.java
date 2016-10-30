@@ -29,31 +29,23 @@ public class Status {
     }
 
     public String getProgressStr() {
-        return  Math.round(this.getProgress() * 1000) / 100 + "%";
+        return  Math.round(this.getProgress() * 1000) / 10.0 + "%";
     }
 
     private double getProgress() {
-        return this.total == 0 ?  0d : (double) this.count / this.total;
+        return this.total == 0 ?  0d : (double) this.count / (double)this.total;
     }
 
     public int getWrongNbr() {
         return wrongNbr;
     }
 
-    public void setWrongNbr(int wrongNbr) {
-        this.wrongNbr = wrongNbr;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
     private double getRate() {
-        return (double) this.correctNbr / (double) this.total;
+        return (double) this.correctNbr / (double) this.count;
     }
 
     public String getRateStr() {
-        return  Math.round(this.getRate() * 1000) / 100 + "%";
+        return  Math.round(this.getRate() * 1000) / 10.0 + "%";
     }
 
     public int getCorrectNbr() {
@@ -61,15 +53,8 @@ public class Status {
         return correctNbr;
     }
 
-    public void setCorrectNbr(int correctNbr) {
-        this.correctNbr = correctNbr;
-    }
-
     public int getCount() {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
 }
