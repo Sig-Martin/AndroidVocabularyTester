@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,39 +7,108 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="shiyao.com.vocabularyscorer.ScorerActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="准备好了吗？海底捞就在眼前！"
+        android:textSize="25dp"
         android:id="@+id/title" />
 
-    <Button
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correct!"
-        android:id="@+id/correct"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="46dp" />
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="正确个数："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text=""
+            android:id="@+id/correct_nbr"/>
+    </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wrong!"
-        android:id="@+id/wrong"
-        android:layout_alignBottom="@+id/correct"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="错误个数："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text=""
+            android:id="@+id/wrong_nbr"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reset"
-        android:id="@+id/reset"
-        android:layout_alignTop="@+id/correct"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="总数："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text=""
+            android:id="@+id/total"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="50dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Correct!"
+            android:id="@+id/correct"
+            android:layout_marginBottom="46dp" />
 
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:id="@+id/reset"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wrong!"
+            android:id="@+id/wrong" />
+
+    </LinearLayout>
+
+</LinearLayout>
