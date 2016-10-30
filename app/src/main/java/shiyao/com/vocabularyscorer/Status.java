@@ -12,13 +12,11 @@ public class Status {
 
     private int count;
 
-    private double rate;
 
     public Status(int total) {
         this.total = total;
         this.correctNbr = 0;
         this.wrongNbr = 0;
-        this.rate = 0d;
     }
 
     public double getProgress() {
@@ -41,12 +39,12 @@ public class Status {
         this.total = total;
     }
 
-    public double getRate() {
-        return rate;
+    private double getRate() {
+        return (double) this.correctNbr / (double) this.total;
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
+    public String getRateStr() {
+        return  Math.round(this.getRate() * 1000) / 100 + "%";
     }
 
     public int getCorrectNbr() {
