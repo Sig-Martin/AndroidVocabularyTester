@@ -8,10 +8,19 @@ public class Status {
 
     private int wrongNbr;
 
-    private int total;
+    private final int total;
 
     private int count;
 
+    public void correct() {
+        this.correctNbr += 1;
+        this.count += 1;
+    }
+
+    public void wrong() {
+        this.wrongNbr += 1;
+        this.count += 1;
+    }
 
     public Status(int total) {
         this.total = total;
@@ -19,7 +28,11 @@ public class Status {
         this.wrongNbr = 0;
     }
 
-    public double getProgress() {
+    public String getProgressStr() {
+        return  Math.round(this.getProgress() * 1000) / 100 + "%";
+    }
+
+    private double getProgress() {
         return this.total == 0 ?  0d : (double) this.count / this.total;
     }
 
@@ -33,10 +46,6 @@ public class Status {
 
     public int getTotal() {
         return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
     }
 
     private double getRate() {

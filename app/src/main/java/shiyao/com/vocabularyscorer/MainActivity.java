@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(MainActivity.this, ScorerActivity.class);
-                intent.putExtra("totalCount", Integer.valueOf(totalCount));
+                intent.putExtra("totalCount", totalCount);
                 startActivity(intent);
             }
         });

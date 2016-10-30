@@ -44,8 +44,22 @@ public class ScorerActivity extends AppCompatActivity {
         this.rateTextView = (TextView) this.findViewById(R.id.rate);
 
         Intent intent = this.getIntent();
-        this.status = new Status(Integer.valueOf(intent.getStringExtra("totalCount")));
+        int totalCount = Integer.valueOf(intent.getStringExtra("totalCount"));
+        this.status = new Status(totalCount);
 
+        this.correct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScorerActivity.this.status.correct();
+            }
+        });
+
+        this.wrong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScorerActivity.this.status.wrong();
+            }
+        });
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +82,14 @@ public class ScorerActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+    }
+
+    private void updateView() {
+        this.correctNbrTextView.setText(this.status.getCorrectNbr());
+        this.wrongNbrTextView.setText(this.status.getWrongNbr());
+        this.countTextView.setText(this.status.getCount());
+        this.progressTextView.setText(this.status.getProgressStr());
+        this.rateTextView.setText(this.status.getRateStr());
     }
 
 }
