@@ -71,14 +71,56 @@
             android:layout_marginLeft="25dp"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:text="总数："/>
+            android:text="已考察数："/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_marginRight="25dp"
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:text=""
-            android:id="@+id/total"/>
+            android:id="@+id/count"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="进度："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text=""
+            android:id="@+id/progress"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="正确率："/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text=""
+            android:id="@+id/rate"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

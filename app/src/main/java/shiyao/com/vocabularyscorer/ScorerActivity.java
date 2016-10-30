@@ -1,11 +1,13 @@
 package shiyao.com.vocabularyscorer;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ScorerActivity extends AppCompatActivity {
 
@@ -15,6 +17,17 @@ public class ScorerActivity extends AppCompatActivity {
 
     private Button reset;
 
+    private TextView correctNbrTextView;
+
+    private TextView wrongNbrTextView;
+
+    private TextView countTextView;
+
+    private TextView progressTextView;
+
+    private TextView rateTextView;
+
+    private Status status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +37,15 @@ public class ScorerActivity extends AppCompatActivity {
         this.correct = (Button) this.findViewById(R.id.correct);
         this.wrong = (Button) this.findViewById(R.id.wrong);
         this.reset = (Button) this.findViewById(R.id.reset);
+        this.correctNbrTextView = (TextView) this.findViewById(R.id.correct_nbr);
+        this.wrongNbrTextView = (TextView) this.findViewById(R.id.wrong_nbr);
+        this.countTextView = (TextView) this.findViewById(R.id.count);
+        this.progressTextView = (TextView) this.findViewById(R.id.progress);
+        this.rateTextView = (TextView) this.findViewById(R.id.rate);
+
+        Intent intent = this.getIntent();
+        this.status = new Status(Integer.valueOf(intent.getStringExtra("totalCount")));
+
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
